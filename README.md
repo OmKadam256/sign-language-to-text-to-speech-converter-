@@ -74,15 +74,51 @@ YOLO (advanced detection)
 5️⃣ Output displayed as text
 6️⃣ Converted into speech
 
-📂 Dataset
-🔗 Custom Dataset (Used in Project)
+📂 Dataset Usage in Project
+📊 Custom Dataset Creation
 
-👉 https://drive.google.com/drive/folders/1p5wb8zP2BgJGclSVjybMAJz1KimUX9Zf
+This project uses a self-collected dataset created using a webcam instead of relying on pre-built datasets.
 
-📊 Dataset Details
+👉 Dataset Link:
+https://drive.google.com/drive/folders/1p5wb8zP2BgJGclSVjybMAJz1KimUX9Zf
+
+🧪 How Dataset Was Created
+Open the data collection script
+Enter the gesture label (e.g., A, B, Hello)
+Show hand gesture in front of camera
+System captures multiple samples per gesture
+Data stored in CSV file
+
+✔ Each sample contains:
+
 21 hand landmarks
-42 features (x, y coordinates)
-Labels: A–Z
+X and Y coordinates
+Total = 42 features per sample
+⚙️ Data Processing
+Landmark points are extracted using MediaPipe
+Data is normalized relative to wrist position
+This ensures:
+Position independence
+Better model accuracy
+🧠 How Dataset is Used
+1️⃣ Training Phase
+Dataset loaded from CSV file
+Features (X, Y coordinates) extracted
+Labels assigned (gesture names)
+Model used:
+👉 Random Forest Classifier
+Dataset split:
+Training: 80%
+Testing: 20%
+2️⃣ Model Learning
+Model learns patterns of hand landmarks
+Identifies differences between gestures
+Builds decision trees for classification
+3️⃣ Real-Time Prediction
+Live camera captures gesture
+Landmarks extracted
+Compared with trained dataset
+Model predicts gesture instantly
 📄 Research Paper
 
 📌 Title: SilentEcho: Real-Time Sign Language Recognition
