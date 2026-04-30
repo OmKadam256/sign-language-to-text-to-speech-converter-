@@ -1,39 +1,26 @@
+🧠 SilentEcho
 <p align="center"> <strong>AI-Based Real-Time Sign Language Recognition & Speech Conversion System</strong> </p> <p align="center"> <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python" /> <img src="https://img.shields.io/badge/OpenCV-Computer_Vision-green?style=for-the-badge&logo=opencv" /> <img src="https://img.shields.io/badge/MediaPipe-Hand_Tracking-orange?style=for-the-badge" /> <img src="https://img.shields.io/badge/Flask-Web_App-black?style=for-the-badge&logo=flask" /> <img src="https://img.shields.io/badge/Machine_Learning-RandomForest-red?style=for-the-badge" /> </p>
 🚀 Overview
 
-SilentEcho is an AI-powered assistive communication system that translates sign language gestures into text and speech in real time using computer vision and machine learning.
+SilentEcho is an AI-powered assistive communication system that converts sign language gestures into text and speech in real time using computer vision and machine learning.
 
-👉 Designed to help deaf and mute individuals communicate effectively using just a webcam.
+👉 Designed to help deaf and mute individuals communicate effectively using a webcam.
 
-📑 Table of Contents
-📍 Problem Statement
-📖 About the Project
-✨ Features
-🏗️ System Architecture
-⚙️ Working Methodology
-📂 Dataset
-📄 Research Paper
-📘 Project Report
-📊 Results & Accuracy
-🛠️ Tech Stack
-🧪 Installation
-🚀 Future Scope
-👨‍💻 Team
 📍 Problem Statement
 
-Communication between hearing-impaired individuals and others is difficult due to lack of real-time translation tools.
+Communication barriers exist because most people do not understand sign language.
 
 ❌ Existing systems:
 
-Expensive (sensor gloves, Kinect)
+Expensive hardware
 Not portable
-Not real-time
+Slow processing
 
 ✅ Solution: SilentEcho
 
 Low-cost
 Real-time
-Works with normal webcam
+Runs on normal laptops
 📖 About the Project
 
 SilentEcho uses MediaPipe + Machine Learning to detect hand gestures and convert them into:
@@ -42,109 +29,83 @@ SilentEcho uses MediaPipe + Machine Learning to detect hand gestures and convert
 ✔ Speech
 ✔ Sentences
 
-👉 It runs completely offline on standard hardware.
+👉 Works completely offline on standard hardware.
 
 ✨ Key Features
-✋ Real-Time Gesture Recognition
-Detects 21 hand landmarks
-Works with single-hand (ASL) and dual-hand (ISL)
-🧠 AI-Based Prediction
-Random Forest Classifier
-Fast & lightweight
-🔊 Speech Conversion
-Converts text → speech using pyttsx3
-🔤 Multi-Language Support
-ASL (American Sign Language)
-ISL (Indian Sign Language)
-🧩 Sentence Builder
-Combine gestures into words
-Real-time sentence creation
-🔐 Authentication System
-Login/Register using Flask + SQLite
-🤖 Hybrid AI System
-MediaPipe (fast)
-YOLO (advanced detection)
+✋ Real-time gesture recognition
+🔤 ASL + 🇮🇳 ISL support
+🔊 Text-to-Speech conversion
+🧠 Random Forest ML model
+🧩 Sentence formation system
+🔐 Login & authentication system
+🤖 Hybrid AI (MediaPipe + YOLO)
 🏗️ System Architecture
 ⚙️ Working Methodology
+Webcam captures gesture
+MediaPipe extracts 21 landmarks
+Data normalized
+Random Forest predicts gesture
+Output displayed as text
+Converted into speech
+📂 Dataset (IMPORTANT)
+🔗 Dataset Link
 
-1️⃣ Webcam captures hand gesture
-2️⃣ MediaPipe extracts 21 landmarks
-3️⃣ Data normalized (relative coordinates)
-4️⃣ Random Forest predicts gesture
-5️⃣ Output displayed as text
-6️⃣ Converted into speech
+👉 https://drive.google.com/drive/folders/1p5wb8zP2BgJGclSVjybMAJz1KimUX9Zf
 
-📂 Dataset Usage in Project
-📊 Custom Dataset Creation
+🧪 How Dataset is Created
+Custom dataset created using webcam
+Each gesture recorded multiple times
+Stored in CSV format
 
-This project uses a self-collected dataset created using a webcam instead of relying on pre-built datasets.
-
-👉 Dataset Link:
-https://drive.google.com/drive/folders/1p5wb8zP2BgJGclSVjybMAJz1KimUX9Zf
-
-🧪 How Dataset Was Created
-Open the data collection script
-Enter the gesture label (e.g., A, B, Hello)
-Show hand gesture in front of camera
-System captures multiple samples per gesture
-Data stored in CSV file
-
-✔ Each sample contains:
+Each sample contains:
 
 21 hand landmarks
 X and Y coordinates
-Total = 42 features per sample
-⚙️ Data Processing
-Landmark points are extracted using MediaPipe
-Data is normalized relative to wrist position
-This ensures:
-Position independence
-Better model accuracy
+Total = 42 features
 🧠 How Dataset is Used
-1️⃣ Training Phase
-Dataset loaded from CSV file
-Features (X, Y coordinates) extracted
-Labels assigned (gesture names)
-Model used:
-👉 Random Forest Classifier
-Dataset split:
-Training: 80%
-Testing: 20%
-2️⃣ Model Learning
-Model learns patterns of hand landmarks
-Identifies differences between gestures
-Builds decision trees for classification
-3️⃣ Real-Time Prediction
-Live camera captures gesture
-Landmarks extracted
+🔹 Training Phase
+Dataset loaded from CSV
+Features extracted
+Labels assigned
+Model trained using Random Forest
+🔹 Testing Phase
+Dataset split (80% train / 20% test)
+🔹 Prediction Phase
+Live gesture captured
 Compared with trained dataset
-Model predicts gesture instantly
+Model predicts output in real-time
+🔁 Dataset Workflow
 📄 Research Paper
 
 📌 Title: SilentEcho: Real-Time Sign Language Recognition
 
-📌 Conference:
-IEEE ICCUBEA 2026 (Pune)
+📌 Conference Submission:
+IEEE ICCUBEA 2026
 
 📌 Contribution:
 
-Real-time gesture recognition
-Low-cost AI system
-Hybrid approach (MediaPipe + YOLO)
+Real-time ML system
+Low-cost assistive technology
+Hybrid AI approach
 📘 Project Report
 
-📄 Mini Project Report:
-👉 Upload PDF in repo and add link here
-
-📌 Highlights:
+📄 Based on your actual report:
 
 Developed at FCRIT Vashi
 Uses MediaPipe + Random Forest
-Converts gestures into speech
+Converts gestures → text → speech
+
+📌 Abstract Summary:
+
+The system uses MediaPipe for landmark detection and Random Forest for classification to achieve real-time gesture recognition with high accuracy.
+
 📊 Results & Accuracy
 🎯 ASL Accuracy: 94% – 96%
 🎯 ISL Accuracy: 92% – 95%
-⚡ Latency: < 50 ms (real-time)
+⚡ Latency: < 50 ms
+
+👉 Verified in project report
+
 🛠️ Tech Stack
 👁️ Computer Vision
 OpenCV
@@ -158,25 +119,23 @@ SQLite
 🎤 Speech
 pyttsx3
 💻 Frontend
-HTML
-CSS
-JavaScript
+HTML, CSS, JavaScript
 🧪 Installation
 git clone https://github.com/your-username/SilentEcho.git
 cd SilentEcho
 pip install opencv-python mediapipe scikit-learn flask pyttsx3 ultralytics
 python app.py
-📸 Screenshots (Add for Best Impact)
-/images/demo1.png  
-/images/demo2.png  
-/images/ui.png  
-🎥 Demo Video (Optional but Powerful)
+📸 Screenshots (Add Images for More Marks)
+/images/demo1.png
+/images/ui.png
+/images/output.png
+🎥 Demo Video
 
-Add YouTube / Drive link here
+(Add YouTube / Drive link here)
 
 🚀 Future Scope
-Deep Learning (CNN, LSTM)
-Mobile App (Android/iOS)
-Multi-language speech
-Cloud-based system
+Deep learning (CNN, LSTM)
+Mobile app
+Multi-language support
+Cloud deployment
 Continuous gesture recognition
